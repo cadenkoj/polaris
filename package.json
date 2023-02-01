@@ -8,8 +8,8 @@
     "start": "node ."
   },
   "dependencies": {
-    "@tomphttp/bare-server-node": "^1.2.3",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "tomp-bare-server": "github:tomphttp/bare-server-node#9375a22"
   }
 }

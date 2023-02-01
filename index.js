@@ -1,34 +1,22 @@
-import "dotenv/config";
-
-import createBareServer from "@tomphttp/bare-server-node";
 import express from "express";
 import { createServer } from "http";
+import Server from "tomp-bare-server/Server.mjs";
 
-const bare = createBareServer("/bare/");
+const bare = new Server("/bare/");
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static("public/"));
 
 const server = createServer();
 
 server.on("request", (req, res) => {
-  if (bare.shouldRoute(req)) {
-    bare.routeRequest(req, res);
-  } else {
-    app(req, res);
-  }
+  if (bare.route_request(req, res)) return;
+  app(req, res);
 });
 
 server.on("upgrade", (req, socket, head) => {
-  if (bare.shouldRoute(req)) {
-    bare.routeUpgrade(req, socket, head);
-  } else {
-    socket.end();
-  }
+  if (bare.route_upgrade(req, socket, head)) return;
+  socket.end();
 });
 
-let port = parseInt(process.env.PORT || "");
-
-if (isNaN(port)) port = 8080;
-
-server.listen({ port });
+server.listen(process.env.PORT || 80);
