@@ -1,3 +1,5 @@
+import "dotenv/config"
+
 import express from "express";
 import { createServer } from "http";
 import Server from "tomp-bare-server/Server.mjs";
@@ -19,4 +21,6 @@ server.on("upgrade", (req, socket, head) => {
   socket.end();
 });
 
-server.listen(process.env.PORT || 80);
+const port = parseInt(process.env.PORT || "8080")
+
+server.listen(port);
