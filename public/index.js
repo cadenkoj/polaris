@@ -6,7 +6,7 @@ const searchQueryUrl = "https://www.google.com/search?q=";
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  await window.navigator.serviceWorker.register("./sw.js", {
+  await window.navigator.serviceWorker.register("/uv/sw.js", {
     scope: __uv$config.prefix,
   });
 

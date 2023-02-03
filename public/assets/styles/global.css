@@ -1,0 +1,64 @@
+:root {
+  font-family: Spartan, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #1a1a1a;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+::-moz-selection {
+  color: #1a1a1a;
+  background: #c4c4c4;
+}
+
+::selection {
+  color: #1a1a1a;
+  background: #c4c4c4;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 4.8em;
+  line-height: 1.1;
+  color: #c4c4c4;
+}
+
+input {
+  border-radius: 16px;
+  outline: 2px solid transparent;
+  border: 2px solid transparent;
+  padding: 1em 1em;
+  min-width: 600px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #242424;
+  box-shadow: 0px 5px 25px #101010;
+  transition: 0.5s ease;
+}
+
+input:hover {
+  box-shadow: 0px 5px 10px #101010;
+}
+
+#container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
